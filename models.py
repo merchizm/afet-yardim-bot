@@ -17,7 +17,7 @@ class Session(requests.Session):
             except Exception as e:
                 time.sleep(1)
 
-def TwitterSession(user_agent, cookie, csrf_token, proxy=None):
+def TwitterSession(user_agent, cookie, csrf_token, proxy=True):
     session = Session()
     session.headers.update(
         {
@@ -31,8 +31,7 @@ def TwitterSession(user_agent, cookie, csrf_token, proxy=None):
     if proxy:
         session.proxies.update(
             {
-                'http': f'http://{proxy}',
-                'https': f'http://{proxy}'
+                'http': 'http://',
             }
         )
     return session
