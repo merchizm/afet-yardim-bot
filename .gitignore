@@ -1,0 +1,5 @@
+config.cfg
+.DS_Store
+.idea/
+.code/
+__pycache__/
